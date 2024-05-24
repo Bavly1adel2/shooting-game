@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       
+      }
+      body{
+    background-image: url(backgrounds/2824536.jpg);
+        background-size: 100%;
+      background-repeat: no-repeat;
+    height: 100vh;
+        font-family: 'Oswald', sans-serif;
+    
+      }
+      .menu{
+        background: linear-gradient(90deg, rgba(0,9,36,1) 0%, rgba(87,9,148,1) 37%, rgba(0,212,255,1) 100%);
+text-align: center;
+background: transparent;
+height: 50px;
+
+
+      }
+      .menu ul{
+        display: inline-flex;
+        list-style: none;
+        
+        
+      }
+        
+      .menu ul li{
+        width: 150px;
+        margin: 5px;
+        padding: 10px;
+       
+        
+      }
+      .menu ul li a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        opacity: 10;
+     
+      }
+      .active{
+        background: rgb(25, 0, 150);
+        border-radius: 30px;
+       
+        
+      }
+      .menu ul li a:hover{
+        background-color: rgb(18, 51, 186);
+        border-radius: 30px;
+     
+      }
+      .menu .home-io{
+        margin-left:15px ;
+      }
+      .menu .Profile-io{
+        margin-left:15px ;
+      }
+      .menu .Store-io{
+        margin-left:15px ;
+      }
+      .menu .Score-io{
+        margin-left:15px ;
+      }
+      .menu .about-io{
+        margin-left:15px ;
+      }
+      .menu .settings-io{
+        margin-left:15px ;
+      }
+      .drop-down{
+        display: none;
+       
+      }
+      .menu ul li:hover .drop-down{
+       
+        display: block;
+        position: absolute;
+        background: black;
+        margin-top: 15px;
+        margin-left: -10px;
+        border-radius: 15px;
+
+      }
+      .menu ul li:hover .drop-down ul{
+        display: block;
+        margin:10px;
+        
+      }
+      .menu ul li:hover .drop-down ul li{
+        width: 150px;
+        padding: 10px;
+        border-bottom: 2px solid white;
+        background: transparent;
+        border: 2px;
+        text-align: left;
+      }
+      .menu ul li:hover .drop-down ul li:last-child{
+        border-bottom: 2px solid white;
+      }
+      .menu ul li:hover .drop-down ul li:hover{
+        transform: scale(1.1);
+        transition: all 0.3s
+      }
+      .contanir2 img{
+        display: block;
+        margin: auto;
+        
+      }
+      .contanir{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+    </style>
+</head>
+<body>
+  <div class="menu">
+<ul>
+ 
+  <li class="active"><a href="#">Home<ion-icon name="home-outline" class="home-io"></ion-icon></a></li>
+
+  <li><a href="#">Profile<ion-icon name="person-circle-outline" class="Profile-io"></ion-icon>
+  </a></li>
+
+  <li><a href="#">Store<ion-icon name="storefront-outline" class="Store-io"></ion-icon></a></li>
+
+  <li><a href="#">Score<ion-icon name="ribbon-outline" class="Score-io"></ion-icon></a></li>
+
+  <li><a href="#">about game<ion-icon name="game-controller-outline" class="about-io"></ion-icon></a>
+  
+  <di class="drop-down">
+    <ul>
+      <li><a href="">Lorem</a></li>
+      <li><a href="">lorem</a></li>
+      <li><a href="">lorem</a></li>
+    </ul>
+  </di>
+  </li>
+
+
+  <li><a href="#">settings<ion-icon name="cog-outline" class="settings-io"></ion-icon>
+  </a></li>
+
+
+</ul>
+</div>
+<div class="contanir2">
+  <img class="img" src="backgrounds/LOGO_splash_screen-removebg-preview.png" alt="" data-value="3" width="400px" height="200px" >
+</div>
+
+<div class="contanir">
+  <img class="planet" data-value="-2" src="main-page-img/1-removebg-preview.png" alt="">
+  <img class="planet" data-value="6" src="main-page-img/2-removebg-preview.png" alt="">
+  <img class="planet" data-value="4" src="main-page-img/3-removebg-preview.png" alt="">
+  <img class="planet" data-value="-6" src="main-page-img/4-removebg-preview.png" alt="">
+  <img class="planet" data-value="8" src="main-page-img/5-removebg-preview.png" alt="">
+  <img class="planet" data-value="-4" src="main-page-img/6-removebg-preview.png" alt="">
+  <img class="planet" data-value="5" src="main-page-img/7-removebg-preview(1).png" alt="">
+</div>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

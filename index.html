@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gazo abden</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #canvas1 {
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: url("img/mars/level5.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+   display:flex ;
+   max-width: 100%;
+   max-height: 100%;
+}
+#beetlemorph, #player, #player_jets ,#rhinomorph,#boss,#eaglemorph,#enemyProjectile,#squidmorph,#boss8,#player2,#player_jets2{
+    display: none;
+}
+
+.contanier{
+position: relative;;
+width: 100%;
+height: 90vh;;
+overflow: hidden;
+}
+.bubbels{
+    position: relative;
+    display: flex;
+
+}
+.bubbels span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: rgb(189, 253, 253);
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,0 0 50px rgb(242, 252, 252),0 0 100px rgb(54, 60, 60);
+    animation: animate 15s linear infinite;
+    animation-duration:calc(110s / var(--i));
+    opacity: 0.4;
+    
+}
+.bubbels span:nth-child(even){
+    background: rgb(236, 135, 204);
+    box-shadow: 0 0 0 10px hwb(270 31% 14% / 0.267)0 50px  rgb(192, 36, 36),0 0 100px rgb(192, 36, 36);
+    
+}
+@keyframes animate{
+    0%
+    {
+        transform: translateY(100vh) scale(0);
+
+    }
+    100%
+    {
+        transform: translateY(-10vh) scale(1);
+        
+    }
+}
+
+.left{
+    width: 100px;
+    font-size: 50px;
+    position: absolute;
+    top: 150px;
+   left: 30px;
+   background: transparent;
+   border: none;
+   color: white;
+}
+.right{
+    width: 100px;
+    font-size: 50px;
+    position: absolute;
+    top: 150px;
+   right: 30px;
+   background: transparent;
+   border: none;
+   color: white;
+}
+.shoot{
+    width: 100px;
+    font-size: 40px;
+    position: absolute;
+    top: 360px;
+   right: 410px;
+   background: transparent;
+   border: none;
+   color: white;
+}
+.shootX{
+    width: 50px;
+    font-size: 30px;
+    position: absolute;
+    top: 330px;
+   right: 560px;
+   background: transparent;
+   border: none;
+   border-radius: 50%;
+   background-color: rgb(30, 129, 236);
+   color: white;
+}
+    </style>
+   
+</head>
+<body>
+
+  
+
+    <canvas id="canvas1">
+     
+    </canvas>
+    <img src="img/beetlemorph.png" id="beetlemorph">
+    <img src="img/rhinomorph.png" alt="" id="rhinomorph">
+    <img src="img/eaglemorph.png" alt="" id="eaglemorph">
+    <img src="img/enemyProjectile.png" alt="" id="enemyProjectile">
+    <img src="img/player.png" id="player">
+    <img src="New folder/player2.png" id="player2">
+    <img src="img/player_jets.png" id="player_jets">
+    <img src="img/player_jets.png" id="player_jets2">
+    <img src="img/squidmorph.png" id="squidmorph">
+    <img src="img/boss.png" alt="" id="boss">
+    <img src="img/boss8.png" alt="" id="boss8">
+   
+    <div class="contanier">
+        <div class="bubbels">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:13;"></span>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+    
+
+   
+
+    <audio src="sounds/fire.mp3"></audio>
+
+    <audio id=alarm>
+        <source src='sounds/laser-zap-90575.mp3'>
+    </audio>
+    
+    <audio id=alarm>
+        <source src='sounds/laser-zap-90575.mp3'>
+    </audio>
+    
+
+    <script src="one_player.js"></script>
+    <script>
+       document.getElementById('alarm').play();
+        var sounds = {
+   90 : 'alarm', // key 'z'
+
+};
+document.onkeydown = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById(soundId).play();
+    else console.log("key not mapped : code is", e.keyCode);
+}
+    </script>
+
+    <script>
+        document.getElementById('alarm').play();
+        var sounds = {
+   88 : 'alarm', // key 'x'
+
+};
+document.onkeydown = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById(soundId).play();
+    else console.log("key not mapped : code is", e.keyCode);
+}
+    </script>
+    <script>
+        
+    document.body.onkeyup = function (e) {
+        console.log(e.keyCode)
+        if (e.keyCode == 32) {
+            const audio = document.createElement('audio');
+            audio.src = ('sounds/fire.mp3')
+            audio.play();
+        }
+        if(e.keyCode == 77) {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+            }
+            else {
+                audio.pause();
+            }
+
+        }
+    }
+
+  
+    </script>
+    <script>
+        let settings ={
+            shootColor1:'white',
+            shootColor2:'red',
+            columnsEnemy:2,
+            rowEnemy:2,
+            bosssLive:10,
+            laserColor1:'blue',
+            laserColor2:'white',
+
+            smallLaserDamege:2,
+            BigLaserDamege:5,
+            smallLaserWidth:20,
+            BigLaserWidth:20,
+            playerLives:3,
+
+            playerLives2:3,
+            maxPlayerLives:10,
+            energyLaser:70,
+            maxEnergyLaser:100,
+            shootingNormalWidth:10,
+            shootingNormalHight:10,
+            BeetlemorphLives:3,
+
+            RhinomorphLives:3,
+            SquidmorphLives:9,
+            EaglemorphLives:1,
+            enemyShotting:5,
+            shadowColor:'black',
+            numberOfProjectilesInIn1S:10,
+            startedBossLives:50,
+            gamewidth:1340,
+            gameHight:685,
+            
+            
+        }
+
+    </script>
+     
+
+    <!-- <button id="myBtn3" class="shoot"><ion-icon name="radio-button-on-outline"></ion-icon></button> 
+
+
+   <button id="myBtn" class="left"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
+
+
+   <button id="myBtn2" class="right"><ion-icon name="arrow-forward-circle-outline"></ion-icon></button>
+    -->
+
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+

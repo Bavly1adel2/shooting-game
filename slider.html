@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding Background Gallery</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+  <style>
+    html, body {
+  margin: 0;
+  height: 100%;
+  background: #F4F1E9;
+}
+
+.arrow {
+  font-size: 2em;
+  color: #363f85;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
+.arrow#left-arrow {
+  -webkit-transform: translate(-11em, -50%);
+  -moz-transform: translate(-11em, -50%);
+  -ms-transform: translate(-11em, -50%);
+  -o-transform: translate(-11em, -50%);
+  transform: translate(-11em, -50%);
+}
+.arrow#right-arrow {
+  -webkit-transform: translate(10em, -50%);
+  -moz-transform: translate(10em, -50%);
+  -ms-transform: translate(10em, -50%);
+  -o-transform: translate(10em, -50%);
+  transform: translate(10em, -50%);
+}
+.arrow:hover {
+  color: #B3B2AD;
+}
+
+.slider {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 200px;
+}
+
+.slide {
+  float: left;
+  position: relative;
+  width: 33.33333%;
+  height: 100%;
+  overflow-x: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+.slide#slide-center {
+  z-index: 1;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.slide-holder {
+  width: 300%;
+  height: 100%;
+  display: block;
+  position: relative;
+  top: 0;
+  -webkit-transform: translateX(-33.33333%);
+  -moz-transform: translateX(-33.33333%);
+  -ms-transform: translateX(-33.33333%);
+  -o-transform: translateX(-33.33333%);
+  transform: translateX(-33.33333%);
+}
+
+.slide-bg {
+  width: 33.33333%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+
+#slide-left .bg-previous {
+  background-image: url("img/boss8.png");
+}
+#slide-left .bg-current {
+  background-image: url("http://images.metmuseum.org/CRDImages/ep/original/46_160.jpg");
+}
+#slide-left .bg-next {
+  background-image: url("http://uploads6.wikiart.org/images/pablo-picasso/the-abduction-of-sabines-1962-1.jpg");
+}
+
+#slide-center .bg-previous {
+  background-image: url("http://images.metmuseum.org/CRDImages/ep/original/46_160.jpg");
+}
+#slide-center .bg-current {
+  background-image: url("http://uploads6.wikiart.org/images/pablo-picasso/the-abduction-of-sabines-1962-1.jpg");
+}
+#slide-center .bg-next {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Peter_Paul_Rubens_(taller)_-_Rapto_de_las_Sabinas.jpg");
+}
+
+#slide-right .bg-previous {
+  background-image: url("http://uploads6.wikiart.org/images/pablo-picasso/the-abduction-of-sabines-1962-1.jpg");
+}
+#slide-right .bg-current {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/72/Peter_Paul_Rubens_(taller)_-_Rapto_de_las_Sabinas.jpg");
+}
+#slide-right .bg-next {
+  background-image: url("http://images.metmuseum.org/CRDImages/ep/original/46_160.jpg");
+}
+
+  </style>
+
+  
+</head>
+
+<body>
+  
+<div class="slider" id="slider">
+  <div class="slide" id="slide-left">
+    <div class="slide-holder">
+      <div class="slide-bg bg-previous"><a href="index.html"><img src="img/boss.png" alt=""></a></div>
+      <div class="slide-bg bg-current"><a href="index.html"></a></div>
+      <div class="slide-bg bg-next"><a href="index.html"></a></div>
+    </div>
+  </div>
+  <div class="slide" id="slide-center">
+    <div class="slide-holder">
+      <div class="slide-bg bg-previous"></div>
+      <div class="slide-bg bg-current"></div>
+      <div class="slide-bg bg-next"></div>
+    </div>
+  </div>
+  <div class="slide" id="slide-right">
+    <div class="slide-holder">
+      <div class="slide-bg bg-previous"></div>
+      <div class="slide-bg bg-current"></div>
+      <div class="slide-bg bg-next"></div>
+    </div>
+  </div>
+</div><a class="arrow" href="#" id="left-arrow"><i class="fa fa-arrow-circle-o-left"></i></a><a class="arrow" href="#" id="right-arrow"><i class="fa fa-arrow-circle-o-right"></i></a>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+
+    <script src="index3.js"></script>
+
+</body>
+</html>

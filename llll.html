@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Define game variables
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Player spaceship
+        const player = {
+            x: canvasWidth / 2,
+            y: canvasHeight - 50,
+            width: 50,
+            height: 50,
+            speed: 5,
+        };
+
+        // Draw the player spaceship
+        function drawPlayer() {
+            ctx.fillStyle = 'red';
+            ctx.fillRect(player.x, player.y, player.width, player.height);
+        }
+
+        // Move the player spaceship
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 37) { // Left arrow
+                player.x -= player.speed;
+            } else if (event.keyCode === 39) { // Right arrow
+                player.x += player.speed;
+            }
+        });
+
+        // Game loop
+        function gameLoop() {
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+            // Draw the player spaceship 
+            drawPlayer();
+
+            // Update the game state
+            // ...
+
+            // Request the next animation frame
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Start the game loop
+        gameLoop();
+    </script>
+</body>
+</html>
